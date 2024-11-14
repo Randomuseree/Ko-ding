@@ -7,22 +7,22 @@ using namespace std;
 int main()
 {
     int wynik = 1; //Deklaracja zmiennych
-    int a;
-    int n;
+    int a; //Baza potegi
+    int n; //Wykladnik potegi
 
 	cout << "Podaj baze: ";
 	cin >> a;
-	cout << "Podaj wyk³adnik: ";
+	cout << "Podaj wykladnik: ";
 	cin >> n;
-	while (n > 0)
+	while (n > 0) //Petla dziala dopoki wykladnik n jest wiekszy od zera
 	{
-		if (n % 2 == 1) { //Dla liczby nieparzystej n, potęgowanie możemy uprościć w następujący sposób: a^n =a⋅a^n−1; gdzie a^{n-1} jest liczbą parzystą, którą można dalej przekształcić zgodnie z zasadą powyżej.
+		if (n % 2 == 1) { //Dla liczby nieparzystej n, potegowanie mozemy uproscic: a^n =a⋅a^n−1; gdzie a^{n-1} jest liczba parzysta, ktora mozna dalej przeksztalcic zgodnie z zasada powyzej.
 			wynik *= a; 
 		}
-		a *= a; //Dla liczby parzystej n, potęgę można przekształcić w: a^n =(a^n/2 )^2
-		n /= 2;
+		a *= a; //a = a * a | Dla liczby parzystej n, potege mozna przekształcic w: a^n =(a^n/2 )^2
+		n /= 2; // n = n / 2 //zmniejszanie wykladnika poprzez dzielenie przez dwa
 	}
-	cout << "wynik: " << wynik; //wypisuje wynik
+	cout << "wynik: " << wynik; //wypisuje wynik //wypisanie wyniku
 
 	return 0;
 }
